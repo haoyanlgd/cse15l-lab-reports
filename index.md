@@ -2,14 +2,16 @@
 Showing the three commands of filesystem commands
 
 Code for CD
-    Without argument:
-        >[user@saharra ~]pwd
-        >/home
-        >[user@saharra ~]cd
-        >
-        >[user@saharra ~]pwd
-        >/home
 
+    Without argument:
+```
+        [user@saharra ~]pwd
+        /home
+        [user@saharra ~]cd
+        
+        [user@saharra ~]pwd
+        /home
+```
     Results:    
         ![Image](Cd_no_arg.PNG)
 
@@ -18,13 +20,14 @@ Code for CD
 
 
     Without argument:
+```
         >[user@saharra ~]pwd
         >/home
         >[user@saharra ~]cd
         >
         >[user@saharra ~]pwd
         >/home
-
+```
     Results:    
         ![Image](Cd_no_arg.PNG)
 
