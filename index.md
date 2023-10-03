@@ -89,7 +89,7 @@ Note:
     >en-us.txt  es-mx.txt  zh-cn.txt
 ```
 Results:    
-    ![Image](laargtodirectory.PNG)
+    ![Image](lsargtodirectory.PNG)
 
 Note:
     LS shows the fils in the working directory of the path you ls into. It will show you what files are in those directories.
