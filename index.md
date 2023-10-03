@@ -3,33 +3,33 @@ Showing the three commands of filesystem commands
 
 Code for CD
 
-    Without argument:
+Without argument:
 ```
-        [user@saharra ~]pwd
-        /home
-        [user@saharra ~]cd
+    [user@saharra ~]pwd
+    /home
+    [user@saharra ~]cd
         
-        [user@saharra ~]pwd
-        /home
+    [user@saharra ~]pwd
+    /home
 ```
-    Results:    
-        ![Image](Cd_no_arg.PNG)
+Results:    
+    ![Image](Cd_no_arg.PNG)
 
-    Note:
-        Nothing changed, no directory change
+Note:
+    Nothing changed, no directory change
 
 
-    Without argument:
+Without argument:
 ```
-        >[user@saharra ~]pwd
-        >/home
-        >[user@saharra ~]cd
-        >
-        >[user@saharra ~]pwd
-        >/home
+    >[user@saharra ~]pwd
+    >/home
+    >[user@saharra ~]cd
+    >
+    >[user@saharra ~]pwd
+    >/home
 ```
-    Results:    
-        ![Image](Cd_no_arg.PNG)
+Results:    
+    ![Image](Cd_no_arg.PNG)
 
-    Note:
-        Nothing changed, no directory change
+Note:
+    Nothing changed, no directory change
