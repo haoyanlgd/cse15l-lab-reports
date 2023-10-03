@@ -19,6 +19,9 @@ Note:
     Nothing changed, no directory change
 
 
+&nbsp;
+&nbsp;
+&nbsp;
 
 
 Path to a directory as an argument:
@@ -37,6 +40,9 @@ Note:
     Directory changed to the argument directory 
 
 
+&nbsp;
+&nbsp;
+&nbsp;
 
 
 Path to a file as an argument:
@@ -47,7 +53,7 @@ Path to a file as an argument:
     >bash: cd: messages/en-us.txt: Not a directory
 ```
 Results:    
-    ![Image](withfilarg.PNG)
+    ![Image](withfilearg.PNG)
 
 Note:
     Directory cannot be changed to a file, throws an error
