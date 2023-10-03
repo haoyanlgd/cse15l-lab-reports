@@ -16,7 +16,7 @@ Results:
     ![Image](Cd_no_arg.PNG)
 
 Note:
-    Nothing changed, no directory change
+    Nothing changed, no directory change. Nothing changed because we didnt specify a directory which the cd could change the directory into.
 
 
 &nbsp;
@@ -37,7 +37,7 @@ Results:
     ![Image](withpatharg.PNG)
 
 Note:
-    Directory changed to the argument directory 
+    Directory changed to the argument directory. Directory changed to the relative path specified from the working directory. 
 
 
 &nbsp;
@@ -56,7 +56,7 @@ Results:
     ![Image](withfilearg.PNG)
 
 Note:
-    Directory cannot be changed to a file, throws an error
+    Directory cannot be changed to a file, throws an error. This is because cd changes directory, but a file is not a working directory.
 
 
 &nbsp;
@@ -75,7 +75,7 @@ Results:
     ![Image](lsnoarg.PNG)
 
 Note:
-    Shows the next level files on the current directory
+    Shows the next level files on the current directory. Shows what files/directories are in your working directory.
 
 
 &nbsp;
@@ -92,7 +92,7 @@ Results:
     ![Image](laargtodirectory.PNG)
 
 Note:
-    Shows the next level files of the directory was input
+    LS shows the fils in the working directory of the path you ls into. It will show you what files are in those directories.
 
 
 &nbsp;
@@ -110,7 +110,7 @@ Results:
     ![Image](lsargtofile.PNG)
 
 Note:
-    Shows the directory to the file
+    Shows the directory to the file. It will only show the file because the file is not a directory and there is nothing more down there.
 
 
 
@@ -131,7 +131,7 @@ Results:
     ![Image](catnoarg.PNG)
 
 Note:
-    Does nothing, you can type more and it will repeat whatever you input
+    Does nothing, you can type more and it will repeat whatever you input. This is because you are not specifying what you want the cat to show, so it will just show what you type. 
 
 
 &nbsp;
@@ -148,7 +148,7 @@ Results:
     ![Image](catwithdirectoryarg.PNG)
 
 Note:
-    Cat will tell you that this is a directory and nothing more.
+    Cat will tell you that this is a directory and nothing more. Cat will show file content but not if you input a directory, it will just simply say that it is a directory.
 
 
 
@@ -166,7 +166,7 @@ Results:
     ![Image](catwithfilearg.PNG)
 
 Note:
-    Prints the contents of the file. 
+    Prints the contents of the file. Cat will print the contents of the file you specify the path to. 
 
 
 
