@@ -1,9 +1,9 @@
 # Lab 1 Blog
 Showing the three commands of filesystem commands
 
-Code for CD
+## Code for CD
 
-## Without argument:
+### Without argument:
 ```
     [user@saharra ~]pwd
     /home
@@ -24,7 +24,7 @@ Note:
 &nbsp;
 
 
-## Path to a directory as an argument:
+### Path to a directory as an argument:
 ```
     >[user@saharra ~]pwd
     >/home
@@ -45,7 +45,7 @@ Note:
 &nbsp;
 
 
-## Path to a file as an argument:
+### Path to a file as an argument:
 ```
     >[user@saharra ~/lecture1]pwd
     >/home/lecture1
@@ -64,7 +64,9 @@ Note:
 &nbsp;
 
 
-## No argument:
+## Code for LS
+
+### No argument:
 ```
     >[user@saharra ~/lecture1]ls
     >Hello.class  Hello.java  messages  README
@@ -81,7 +83,7 @@ Note:
 &nbsp;
 
 
-## Path to a directory as an argument:
+### Path to a directory as an argument:
 ```
     >[user@saharra ~/] ls lecture1/messages/
     >en-us.txt  es-mx.txt  zh-cn.txt
@@ -98,7 +100,7 @@ Note:
 &nbsp;
 
 
-## Path to a file as an argument:
+### Path to a file as an argument:
 ```
     >[user@saharra ~/]ls lecture1/Hello.class
     >lecture1/Hello.class
@@ -117,38 +119,19 @@ Note:
 &nbsp;
 
 
-## No argument:
+## Code for cat
+
+### No argument:
 ```
-    >[user@saharra ~/lecture1]pwd
-    >/home/lecture1
-    >[user@saharra ~/lecture1]cd lecture1/en-us.txt
-    >bash: cd: messages/en-us.txt: Not a directory
-```
-Results:    
-    ![Image](withfilearg.PNG)
-
-Note:
-    Directory cannot be changed to a file, throws an error
-
-
-&nbsp;
-&nbsp;
-&nbsp;
-
-
-## Path to a directory as an argument:
-```
-    >[user@saharra ~/lecture1]pwd
-    >/home/lecture1
-    >[user@saharra ~/lecture1]cd lecture1/en-us.txt
-    >bash: cd: messages/en-us.txt: Not a directory
+    >[user@saharra ~/lecture1]cat
+    >asd
+    >asd
 ```
 Results:    
-    ![Image](withfilearg.PNG)
+    ![Image](catnoarg.PNG)
 
 Note:
-    Directory cannot be changed to a file, throws an error
-
+    Does nothing, you can type more and it will repeat whatever you input
 
 
 &nbsp;
@@ -156,18 +139,34 @@ Note:
 &nbsp;
 
 
-## Path to a file as an argument:
+### Path to a directory as an argument:
 ```
-    >[user@saharra ~/lecture1]pwd
-    >/home/lecture1
-    >[user@saharra ~/lecture1]cd lecture1/en-us.txt
-    >bash: cd: messages/en-us.txt: Not a directory
+    >[user@saharra ~/lecture1]cat messages/
+    >cat: messages/: Is a directory
 ```
 Results:    
-    ![Image](withfilearg.PNG)
+    ![Image](catwithdirectoryarg.PNG)
 
 Note:
-    Directory cannot be changed to a file, throws an error
+    Cat will tell you that this is a directory and nothing more.
+
+
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+
+### Path to a file as an argument:
+```
+    >[user@saharra ~/lecture1]cat messages/en-us.txt
+    >Hello World!
+```
+Results:    
+    ![Image](catwithfilearg.PNG)
+
+Note:
+    Prints the contents of the file. 
 
 
 
