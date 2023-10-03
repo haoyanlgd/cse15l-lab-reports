@@ -19,17 +19,35 @@ Note:
     Nothing changed, no directory change
 
 
-Without argument:
+
+
+Path to a directory as an argument:
 ```
     >[user@saharra ~]pwd
     >/home
-    >[user@saharra ~]cd
+    >[user@saharra ~]cd lecture1/
     >
-    >[user@saharra ~]pwd
-    >/home
+    >[user@saharra ~/lecture1]pwd
+    >/home/lecture1
 ```
 Results:    
-    ![Image](Cd_no_arg.PNG)
+    ![Image](withpatharg.PNG)
 
 Note:
-    Nothing changed, no directory change
+    Directory changed to the argument directory 
+
+
+
+
+Path to a file as an argument:
+```
+    >[user@saharra ~/lecture1]pwd
+    >/home/lecture1
+    >[user@saharra ~/lecture1]cd lecture1/en-us.txt
+    >bash: cd: messages/en-us.txt: Not a directory
+```
+Results:    
+    ![Image](withfilarg.PNG)
+
+Note:
+    Directory cannot be changed to a file, throws an error
