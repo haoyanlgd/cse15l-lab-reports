@@ -3,7 +3,7 @@ Showing the three commands of filesystem commands
 
 Code for CD
 
-# h2 Without argument:
+## Without argument:
 ```
     [user@saharra ~]pwd
     /home
@@ -24,7 +24,7 @@ Note:
 &nbsp;
 
 
-# h2 Path to a directory as an argument:
+## Path to a directory as an argument:
 ```
     >[user@saharra ~]pwd
     >/home
@@ -45,7 +45,7 @@ Note:
 &nbsp;
 
 
-# h2 Path to a file as an argument:
+## Path to a file as an argument:
 ```
     >[user@saharra ~/lecture1]pwd
     >/home/lecture1
