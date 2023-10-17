@@ -16,7 +16,7 @@ Results:
     ![Image](Cd_no_arg.PNG)
 
 Note:
-    Nothing changed, no directory change. Nothing changed because we didnt specify a directory which the cd could change the directory into.
+    Nothing changed, no directory change. Nothing changed because we are already in the home directory. CD with no arguments in another directory that is not the home directory would change the working directory to the home directory.
 
 
 &nbsp;
@@ -75,7 +75,7 @@ Results:
     ![Image](lsnoarg.PNG)
 
 Note:
-    Shows the next level files on the current directory. Shows what files/directories are in your working directory.
+    Shows the immediate subdirectories or files that are in your current working directory. Without arguments it shows what files or directories are avalible in your current working directory. 
 
 
 &nbsp;
@@ -92,7 +92,7 @@ Results:
     ![Image](lsargtodirectory.PNG)
 
 Note:
-    LS shows the fils in the working directory of the path you ls into. It will show you what files are in those directories.
+    LS shows the fils and directories in the working directory of the path you ls into. It will show you what files and directories are in those directories.
 
 
 &nbsp;
@@ -110,7 +110,7 @@ Results:
     ![Image](lsargtofile.PNG)
 
 Note:
-    Shows the directory to the file. It will only show the file because the file is not a directory and there is nothing more down there.
+    Shows the directory to the file. It does not produce an error because when inputing a file name to LS, it will act as a filter to find that file in that directory to display it if it exists. Or else it will just result in an error.
 
 
 
@@ -131,7 +131,8 @@ Results:
     ![Image](catnoarg.PNG)
 
 Note:
-    Does nothing, you can type more and it will repeat whatever you input. This is because you are not specifying what you want the cat to show, so it will just show what you type. 
+    It is not an error Instead, it waits for input from standard input (typically the keyboard). By default, without any arguments, cat reads from standard input. This means you can start typing directly into the terminal, and it will echo what you type after you press Enter. To exit the mode, simply press the keybind according to your operating system. 
+
 
 
 &nbsp;
@@ -148,8 +149,7 @@ Results:
     ![Image](catwithdirectoryarg.PNG)
 
 Note:
-    Cat will tell you that this is a directory and nothing more. Cat will show file content but not if you input a directory, it will just simply say that it is a directory.
-
+    When you use cat with a directory as an argument, it will produce an error because cat is designed to read and concatenate file content, not directories. The error message will tell you that it is a directory. 
 
 
 &nbsp;
