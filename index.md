@@ -110,7 +110,7 @@ Results:
     ![Image](lsargtofile.PNG)
 
 Note:
-    Shows the directory to the file. It does not produce an error because when inputing a file name to LS, it will act as a filter to find that file in that directory to display it if it exists. Or else it will just result in an error.
+    Shows the directory to the file. It will produce an error because when inputing a file name to LS, it will not know what to do since showing the sub-directories of a file would result in nothing since it is not a directory.
 
 
 
