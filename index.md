@@ -33,7 +33,7 @@ Summarize what commands were used:
 
 ## Step 6 
 Results:    
-    ![Image](step6f.PNG)
+    ![Image](step6f.png)
 ### keys pressed to get there:
 ```
 cd l <tab> <enter> bash test.sh <enter>
@@ -46,7 +46,7 @@ Summarize what commands were used:
 
 ## Step 7 
 Results:    
-    ![Image](step7.PNG)
+    ![Image](step7.png)
 ### keys pressed to get there:
 ```
     vim L <tab> .java <enter> i <right> <backspace> 2 <esc> :wq! <enter>
@@ -58,7 +58,7 @@ Summarize what commands were used:
 
 ## Step 8 
 Results:    
-    ![Image](step6.PNG)
+    ![Image](step6.png)
 ### keys pressed to get there:
 ```
     bash test.sh <enter>
@@ -69,7 +69,7 @@ Summarize what commands were used:
 
 ## Step 9 
 Results:    
-    ![Image](step9.PNG)
+    ![Image](step9.png)
 ### keys pressed to get there:
 ```
     git add -A <enter> git commit -m "f" <enter> git push <enter>
