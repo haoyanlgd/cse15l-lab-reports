@@ -1,176 +1,78 @@
-# Lab 1 Blog
-Showing the three commands of filesystem commands
+# Lab 4 Blog
+Showing the steps to editing via vim
 
-## Code for CD
+4 Log into ieng6
+5 Clone your fork of the repository from your Github account
+6 Run the tests, demonstrating that they fail
+7 Edit the code file ListExamples.java to fix the failing test (as a reminder, the error in the code is just that index1 is used instead of index2 in the final loop in merge)
+8 Run the tests, demonstrating that they now succeed
+9 Commit and push the resulting change to your Github account
 
-### Without argument:
-```
-    [user@saharra ~]pwd
-    /home
-    [user@saharra ~]cd
-        
-    [user@saharra ~]pwd
-    /home
-```
+## Step 4 
 Results:    
-    ![Image](Cd_no_arg.PNG)
-
-Note:
-    Nothing changed, no directory change. Nothing changed because we are already in the home directory. CD with no arguments in another directory that is not the home directory would change the working directory to the home directory.
-
-
-&nbsp;
-&nbsp;
-&nbsp;
-
-
-### Path to a directory as an argument:
+    ![Image](step4.png)
+### keys pressed to get there:
 ```
-    >[user@saharra ~]pwd
-    >/home
-    >[user@saharra ~]cd lecture1/
-    >
-    >[user@saharra ~/lecture1]pwd
-    >/home/lecture1
+ssh h2wan@ieng6.ucsd.edu <enter> myPassWord! <enter>
 ```
+Summarize what commands were used:
+    The command I ran was ssh which will connect me remotely to the machine on ieng6, the two enter key presses were to enter the command and my password subsequently.
+
+
+## Step 5 
 Results:    
-    ![Image](withpatharg.PNG)
-
-Note:
-    Directory changed to the argument directory. Directory changed to the relative path specified from the working directory. 
-
-
-&nbsp;
-&nbsp;
-&nbsp;
-
-
-### Path to a file as an argument:
+    ![Image](step5.png)
+### keys pressed to get there:
 ```
-    >[user@saharra ~/lecture1]pwd
-    >/home/lecture1
-    >[user@saharra ~/lecture1]cd lecture1/en-us.txt
-    >bash: cd: messages/en-us.txt: Not a directory
+git clone git@github.com:haoyanlgd/lab7.git <enter>
 ```
+Summarize what commands were used:
+    The command I used was git clone which creates a copy of the github repository on my local machine. The link was the ssh link given to me on github and the enter key was used to enter the command. 
+
+
+
+## Step 6 
 Results:    
-    ![Image](withfilearg.PNG)
-
-Note:
-    Directory cannot be changed to a file, throws an error. This is because cd changes directory, but a file is not a working directory.
-
-
-&nbsp;
-&nbsp;
-&nbsp;
-
-
-## Code for LS
-
-### No argument:
+    ![Image](step6f.PNG)
+### keys pressed to get there:
 ```
-    >[user@saharra ~/lecture1]ls
-    >Hello.class  Hello.java  messages  README
+cd l <tab> <enter> bash test.sh <enter>
 ```
+Summarize what commands were used:
+    I used to cd command to change the directory into the directory where the test file is at. I used tab to autocomplete the lab7 directory and I used enter to enter the commands. I used bash to run the test file test.sh and enter to enter that command. 
+
+
+
+
+## Step 7 
 Results:    
-    ![Image](lsnoarg.PNG)
-
-Note:
-    Shows the immediate subdirectories or files that are in your current working directory. Without arguments it shows what files or directories are avalible in your current working directory. 
-
-
-&nbsp;
-&nbsp;
-&nbsp;
-
-
-### Path to a directory as an argument:
+    ![Image](step7.PNG)
+### keys pressed to get there:
 ```
-    >[user@saharra ~/] ls lecture1/messages/
-    >en-us.txt  es-mx.txt  zh-cn.txt
+    vim L <tab> .java <enter> i <right> <backspace> 2 <esc> :wq! <enter>
 ```
+Summarize what commands were used:
+    I used the vim command to edit the file in vim. I used tab to autocomplete ListExamples then I wrote .java and pressed enter to enter the command. I then pressed i to enter insert mode in vim, I used right arrow key to get to the location i want to edit then pressed backspace to delete the 1 then replaced it with 2. I then pressed escape to enter command mode where I typed :w1! to exit and save. I pressed enter to enter that command. 
+
+
+
+## Step 8 
 Results:    
-    ![Image](lsargtodirectory.PNG)
-
-Note:
-    LS shows the fils and directories in the working directory of the path you ls into. It will show you what files and directories are in those directories.
-
-
-&nbsp;
-&nbsp;
-&nbsp;
-
-
-### Path to a file as an argument:
+    ![Image](step6.PNG)
+### keys pressed to get there:
 ```
-    >[user@saharra ~/]ls lecture1/Hello.class
-    >lecture1/Hello.class
-   
+    bash test.sh <enter>
 ```
+Summarize what commands were used:
+    I used the bash command to run the test.sh file which compiles and runs the tests. Then I used enter key to enter that command. 
+
+
+## Step 9 
 Results:    
-    ![Image](lsargtofile.PNG)
-
-Note:
-    Shows the directory to the file. It will produce an error because when inputing a file name to LS, it will not know what to do since showing the sub-directories of a file would result in nothing since it is not a directory.
-
-
-
-&nbsp;
-&nbsp;
-&nbsp;
-
-
-## Code for cat
-
-### No argument:
+    ![Image](step9.PNG)
+### keys pressed to get there:
 ```
-    >[user@saharra ~/lecture1]cat
-    >asd
-    >asd
+    git add -A <enter> git commit -m "f" <enter> git push <enter>
 ```
-Results:    
-    ![Image](catnoarg.PNG)
-
-Note:
-    It is not an error Instead, it waits for input from standard input (typically the keyboard). By default, without any arguments, cat reads from standard input. This means you can start typing directly into the terminal, and it will echo what you type after you press Enter. To exit the mode, simply press the keybind according to your operating system. 
-
-
-
-&nbsp;
-&nbsp;
-&nbsp;
-
-
-### Path to a directory as an argument:
-```
-    >[user@saharra ~/lecture1]cat messages/
-    >cat: messages/: Is a directory
-```
-Results:    
-    ![Image](catwithdirectoryarg.PNG)
-
-Note:
-    When you use cat with a directory as an argument, it will produce an error because cat is designed to read and concatenate file content, not directories. The error message will tell you that it is a directory. 
-
-
-&nbsp;
-&nbsp;
-&nbsp;
-
-
-### Path to a file as an argument:
-```
-    >[user@saharra ~/lecture1]cat messages/en-us.txt
-    >Hello World!
-```
-Results:    
-    ![Image](catwithfilearg.PNG)
-
-Note:
-    Prints the contents of the file. Cat will print the contents of the file you specify the path to. 
-
-
-
-&nbsp;
-&nbsp;
-&nbsp;
-
+Summarize what commands were used:
+    I first used the git add command which adds the changes to the local main branch, I then pressed enter to enter that command. I then used the commit command which creates a new commit for my local git repository with an option -m which adds a commit message, I pressed enter to enter that command. I then used the git push command, which pushes the changes in my local repository to the one hosted on github. I pressed enter key to enter that command. 
