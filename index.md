@@ -1,78 +1,128 @@
-# Lab 4 Blog
-Showing the steps to editing via vim
-
-4 Log into ieng6
-5 Clone your fork of the repository from your Github account
-6 Run the tests, demonstrating that they fail
-7 Edit the code file ListExamples.java to fix the failing test (as a reminder, the error in the code is just that index1 is used instead of index2 in the final loop in merge)
-8 Run the tests, demonstrating that they now succeed
-9 Commit and push the resulting change to your Github account
-
-## Step 4 
-Results:    
-    ![Image](step4.png)
-### keys pressed to get there:
-```
-ssh h2wan@ieng6.ucsd.edu <enter> myPassWord! <enter>
-```
-Summarize what commands were used:
-    The command I ran was ssh which will connect me remotely to the machine on ieng6, the two enter key presses were to enter the command and my password subsequently.
+# Lab 5 Blog
+Design a debugging scenario, and write your report as a conversation on EdStem. 
 
 
-## Step 5 
-Results:    
-    ![Image](step5.png)
-### keys pressed to get there:
-```
-git clone git@github.com:haoyanlgd/lab7.git <enter>
-```
-Summarize what commands were used:
-    The command I used was git clone which creates a copy of the github repository on my local machine. The link was the ssh link given to me on github and the enter key was used to enter the command. 
+## Part 1
+
+### Initial Post:
+![Image](initial_symptom.png)
+    
+    Student: Hello, when I run the test.sh file for lab7 to run some tests on the the implementation of ListExamples the test would never end. It would never give me a result and I'm guessing that the program is stuck in an infinite loop but I have no idea where it is stuck since it would never give me a result. I tried using jdb but it would also just be stuck in an infinite loop. 
 
 
+### TA Response:    
+    TA: Hello, you are on the right path, there are a few commands in jdb that will allow you to troubleshoot the problem you are dealing with. Is there a command that allows you to find out where you are in the thread that is executing infinitely? Is there a command that allows you to freeze the thread temporarily so you can identify what the bug is. 
 
-## Step 6 
-Results:    
-    ![Image](step6f.png)
-### keys pressed to get there:
-```
-cd l <tab> <enter> bash test.sh <enter>
-```
-Summarize what commands were used:
-    I used to cd command to change the directory into the directory where the test file is at. I used tab to autocomplete the lab7 directory and I used enter to enter the commands. I used bash to run the test file test.sh and enter to enter that command. 
+### Student Response:
+![Image](student_response.png)
+![Image](student_response2.png)
+    Student: Thanks, I found the commands suspend which allowed me to freeze the program once it fell into the infinite loop. I was then able to use threads to find the thread of the Main, which using where, also told me that the error was in line 42 of ListExamples. Looking more deeply at that method I found that the incrementer index2 was mistakenly spelled as index1 which caused the while loop to never end causing the bug. 
+
+### Setup with this debugging scenario
+Directory structure needed:
+
+![Image](directory_structure.png)
+
+Code for ListExamples.java (before bug fix)
+
+    import java.util.ArrayList;
+    import java.util.List;
+
+    interface StringChecker { boolean checkString(String s); }
+
+    class ListExamples {
+
+    // Returns a new list that has all the elements of the input list for which
+    // the StringChecker returns true, and not the elements that return false, in
+    // the same order they appeared in the input list;
+    static List<String> filter(List<String> list, StringChecker sc) {
+        List<String> result = new ArrayList<>();
+        for(String s: list) {
+        if(sc.checkString(s)) {
+            result.add(0, s);
+        }
+        }
+        return result;
+    }
 
 
+    // Takes two sorted list of strings (so "a" appears before "b" and so on),
+    // and return a new list that has all the strings in both list in sorted order.
+    static List<String> merge(List<String> list1, List<String> list2) {
+        List<String> result = new ArrayList<>();
+        int index1 = 0, index2 = 0;
+        while(index1 < list1.size() && index2 < list2.size()) {
+        if(list1.get(index1).compareTo(list2.get(index2)) < 0) {
+            result.add(list1.get(index1));
+            index1 += 1;
+        }
+        else {
+            result.add(list2.get(index2));
+            index2 += 1;
+        }
+        }
+        while(index1 < list1.size()) {
+        result.add(list1.get(index1));
+        index1 += 1;
+        }
+        while(index2 < list2.size()) {
+        result.add(list2.get(index2));
+        // change index1 below to index2 to fix test
+        index1 += 1;
+        }
+        return result;
+    }
+    }
+
+Code for ListExamplesTests.java (before bug fix)
+
+    import static org.junit.Assert.*;
+    import org.junit.*;
+    import java.util.*;
+    import java.util.ArrayList;
 
 
-## Step 7 
-Results:    
-    ![Image](step7.png)
-### keys pressed to get there:
-```
-    vim L <tab> .java <enter> i <right> <backspace> 2 <esc> :wq! <enter>
-```
-Summarize what commands were used:
-    I used the vim command to edit the file in vim. I used tab to autocomplete ListExamples then I wrote .java and pressed enter to enter the command. I then pressed i to enter insert mode in vim, I used right arrow key to get to the location i want to edit then pressed backspace to delete the 1 then replaced it with 2. I then pressed escape to enter command mode where I typed :w1! to exit and save. I pressed enter to enter that command. 
+    public class ListExamplesTests {
+        @Test
+        public void testMerge1() {
+                List<String> l1 = new ArrayList<String>(Arrays.asList("x", "y"));
+            List<String> l2 = new ArrayList<String>(Arrays.asList("a", "b"));
+            assertArrayEquals(new String[]{ "a", "b", "x", "y"}, ListExamples.merge(l1, l2).toArray());
+        }
+        
+        @Test
+            public void testMerge2() {
+            List<String> l1 = new ArrayList<String>(Arrays.asList("a", "b", "c"));
+            List<String> l2 = new ArrayList<String>(Arrays.asList("c", "d", "e"));
+            assertArrayEquals(new String[]{ "a", "b", "c", "c", "d", "e" }, ListExamples.merge(l1, l2).toArray());
+            }
 
+    }
 
+Code for test.sh (before bug fix)
 
-## Step 8 
-Results:    
-    ![Image](step6.png)
-### keys pressed to get there:
-```
-    bash test.sh <enter>
-```
-Summarize what commands were used:
-    I used the bash command to run the test.sh file which compiles and runs the tests. Then I used enter key to enter that command. 
+    javac -g -cp ".;lib/hamcrest-core-1.3.jar;lib/junit-4.13.2.jar" *.java
+    java -cp ".;lib/hamcrest-core-1.3.jar;lib/junit-4.13.2.jar" org.junit.runner.JUnitCore ListExamplesTests
 
+Command Lines used to trigger the bug
 
-## Step 9 
-Results:    
-    ![Image](step9.png)
-### keys pressed to get there:
-```
-    git add -A <enter> git commit -m "f" <enter> git push <enter>
-```
-Summarize what commands were used:
-    I first used the git add command which adds the changes to the local main branch, I then pressed enter to enter that command. I then used the commit command which creates a new commit for my local git repository with an option -m which adds a commit message, I pressed enter to enter that command. I then used the git push command, which pushes the changes in my local repository to the one hosted on github. I pressed enter key to enter that command. 
+    bash test.sh
+
+What was used to fix the bug:
+
+    Change 
+
+    while(index2 < list2.size()) {
+        result.add(list2.get(index2));
+        // change index1 below to index2 to fix test
+        index1 += 1;
+    }
+
+    to 
+
+    while(index2 < list2.size()) {
+        result.add(list2.get(index2));
+        // change index1 below to index2 to fix test
+        index2 += 1;
+    }
+
