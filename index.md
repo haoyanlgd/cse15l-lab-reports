@@ -108,9 +108,16 @@ Command Lines used to trigger the bug
 
     bash test.sh
 
+    or
+
+    jdb -classpath ".;lib/hamcrest-core-1.3.jar;lib/junit-4.13.2.jar" org.junit.runner.JUnitCore ListExamplesTests
+
+    run 
+
+
 What was used to fix the bug:
 
-    Change 
+    Change ListExamples.java
 
     while(index2 < list2.size()) {
         result.add(list2.get(index2));
@@ -126,3 +133,8 @@ What was used to fix the bug:
         index2 += 1;
     }
 
+## Part 2
+
+Insight: 
+    
+    In the second half of this quarter, I delved into the intricacies of debugging Java programs using jdb and the concept of suspension. Learning how to effectively use jdb for pinpointing issues in my code has been an invaluable skill, providing insights into the execution flow and aiding in identifying and resolving bugs. Moreover, discovering the power and versatility of Vim as a text editor during this lab experience has significantly improved my coding efficiency and control over the editing process. These insights not only enhance my technical capabilities but also underscore the importance of mastering diverse tools to become a more proficient programmer.
